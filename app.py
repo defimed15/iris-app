@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 import time
-from PIL import Image
 
-st.set_page_config(page_title="Halaman Modelling", layout="wide")
+st.set_page_config(page_title="ML Portfolio", layout="wide", page_icon=':sparkles:',)
 
 st.write("""
 # Welcome to my machine learning dashboard
@@ -22,6 +21,7 @@ def iris():
     """)
     st.sidebar.header('User Input Features:')
 
+    # Input Value
     uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
     if uploaded_file is not None:
         input_df = pd.read_csv(uploaded_file)
@@ -37,10 +37,13 @@ def iris():
                     'PetalLengthCm': PetalLengthCm,
                     'PetalWidthCm': PetalWidthCm}
             features = pd.DataFrame(data, index=[0])
-            return features
+            return features  
         input_df = user_input_features()
-    # img = Image.open("iris.JPG")
+    
+    #Illustration
     st.image("https://www.easytogrowbulbs.com/cdn/shop/products/BeardedIrisColorfullMix_VIS-sqWeb_8a293612-7bc0-4a9f-89ac-917e820d0ccb.jpg?v=1664472481&width=1920", width=500)
+
+    #If user triggers predict then run model
     if st.sidebar.button('Predict!'):
         df = input_df
         st.write(df)
@@ -54,5 +57,6 @@ def iris():
             time.sleep(4)
             st.success(f"Prediction of this app is {output}")
 
+# If user select the iris model then run iris()
 if add_selectitem == "Iris species!":
     iris()
