@@ -1,6 +1,3 @@
 streamlit
 pandas
-pickle
-time
-PIL
 scikit-learn==1.7.0
