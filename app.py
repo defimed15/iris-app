@@ -11,7 +11,7 @@ st.write("""
 This dashboard created by : [@defi.mediana](https://www.linkedin.com/in/defi-mediana/)
 """)
 
-add_selectitem = st.sidebar.selectbox("Want to open about?", (" ", "Iris species!"))
+add_selectitem = st.sidebar.selectbox("Want to open about?", (" ", "Iris Species"))
 
 def iris():
     st.write("""
@@ -58,5 +58,5 @@ def iris():
             st.success(f"Prediction of this app is {output}")
 
 # If user select the iris model then run iris()
-if add_selectitem == "Iris species!":
+if add_selectitem == "Iris Species":
     iris()
