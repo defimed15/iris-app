@@ -3,4 +3,4 @@ pandas
 pickle
 time
 PIL
-sklearn
+scikit-learn
