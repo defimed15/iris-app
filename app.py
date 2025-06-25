@@ -131,7 +131,7 @@ def heart():
             if output == "Heart Disease Risk Detected":
                 st.error(f"Prediction : {output}")
                 st.info("Please consult a doctor for further evaluation and advice.")
-        st.write("### Probability of Heart Disease Risk: " + str(prediction_proba[:,1]))
+        # st.write("### Probability of Heart Disease Risk: " + str(prediction_proba[:,1]))
 
 if add_selectitem == "Iris Species":
     iris()
